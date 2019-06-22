@@ -1,6 +1,6 @@
-# Jupyter REES Builder
+ Jupyter REES Builder
 
-REES stands for [Reproducible Execution Environment Specification](https://repo2docker.readthedocs.io/en/latest/specification.html),
+REES stands for [Reproducible Execution Environment Specification](https://repo2docker.readthedocs.io/en/latest/specification.html).
 It was conceived by the developers of [Binder](https://mybinder.org) but its
 utility extends beyond Binder specifically.
 
@@ -11,9 +11,13 @@ This project is still in the design stage. It grew out of discussions at the
 
 * Reduce the learning curve for creating Binder-compatible repositories by
   adding a UI for specifying dependencies and configuration.
-* Provide Binder-like functionality without Kubernetes. This is useful in
-  environments where cloud services aren't a good fit and where there are not
-  local resources to maintain a Kubernetes cluster.
+* Enable users to browse Binder-compatible repos created by others and launch
+  them on local compute, perhaps with access to persistent storage (i.e., their
+  home directory).
+* Deploy a builder for Binder-compliant repos that does not require Kubernetes.
+  This is important in environments where cloud services aren't a good fit (i.e.
+  large locally-stored datasets) and where there are not local resources to
+  maintain a Kubernetes cluster.
 
 ## Related Work
 
@@ -38,6 +42,6 @@ This project is still in the design stage. It grew out of discussions at the
    JupyterLab/notebook extension---and could be deployed in the same web app as
    (2).
 
-4. A gallery of images, with the ability to browse static notebooks within them
-   and to launch them as named servers on the Hub, with the optional to mount
-   local storage for persistence.
+4. A gallery of built REES-compliant images, with the ability to browse static
+   renderings of the notebooks within them and then to launch them as named
+   servers on the Hub, with the option to mount local storage for persistence.
