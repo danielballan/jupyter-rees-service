@@ -11,6 +11,8 @@ This project is still in the design stage. It grew out of discussions at the
 
 * Reduce the learning curve for creating Binder-compatible repositories by
   adding a UI for specifying dependencies and configuration.
+* Enable users to specify their whole environment---not just a kernel, but also
+  any Jupyter server or front-end extensions they need.
 * Enable users to browse Binder-compatible repos created by others and launch
   them on local compute, perhaps with access to persistent storage (i.e., their
   home directory).
@@ -23,7 +25,8 @@ This project is still in the design stage. It grew out of discussions at the
 
 * This has some similarities to
   [nb_conda](https://github.com/Anaconda-Platform/nb_conda) but it will produce
-  containers instead of kernels.
+  environments (could be conda envs, venvs, or containers) that encompass the
+  notebook server and frontend, not just a kernel.
 * This has some similarities to Code Ocean's UI for building containers, but it
   will operate _outside_ of a running notebook server, and it will be
   open-source.
@@ -31,7 +34,10 @@ This project is still in the design stage. It grew out of discussions at the
 ## Components
 
 1. A JupyterLab extension that lets you select a folder and choose, via command
-   or a context menu, "Make this into a repo2docker container."
+   or a context menu, "Make this into a repo2docker image."` (For simple
+   specifications, ones without ``apt.txt`` or ``Dockerfile``, it might also be
+   useful to support "repo2conda" for an option that does not involve
+   containers.)
 
 2. A JupyterHub Service that processes requests from (1). This service has
    permission to run docker and has access to storage where it can cache images.
