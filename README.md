@@ -1,4 +1,4 @@
-# Jupyter REES Builder
+# Jupyter REES Service
 
 REES stands for [Reproducible Execution Environment Specification](https://repo2docker.readthedocs.io/en/latest/specification.html).
 It was conceived by the developers of [Binder](https://mybinder.org) but its
